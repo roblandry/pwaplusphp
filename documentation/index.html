@@ -1,0 +1,742 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>PWA+PHP Pro - Public and Private Picasa Web Albums in Wordpress</title>
+	
+	<meta name="description" content="PWA+PHP Pro is a Wordpress plugin that provides all the features necessary to embed your private and public picasa album within your Wordpress site.">
+	<meta name="author" content="SJM">
+	<meta name="copyright" content="SJM">
+	<meta name="generator" content="Documenter v1.4 http://rxa.li/documenter">
+	<meta name="date" content="2011-07-15T00:00:00+02:00">
+	
+	<link rel="stylesheet" href="css/documenter_style.css" media="all">
+	
+	<script src="js/jquery.1.5.1.js"></script>
+	<script src="js/cufon.js"></script><script src="js/font.js"></script>
+	<script src="js/jquery.scrollTo-1.4.2-min.js"></script>
+	<script src="js/jquery.easing.js"></script>
+	
+	<link rel="stylesheet" href="css/shDocumenter.css" media="screen">
+	<script src="js/shCore.js"></script>
+	<script src="js/shBrushPlain.js"></script>
+	<script>SyntaxHighlighter.defaults['toolbar'] = false;SyntaxHighlighter.all();</script>
+
+	<script>document.createElement('section');var duration=450,easing='easeOutExpo';</script>
+	<script src="js/script.js"></script>
+	
+	<style>
+		html{background-color:#EEEEEE;color:#383838;}
+		::-moz-selection{background:#333636;color:#00DFFC;}
+		::selection{background:#333636;color:#00DFFC;}
+		#documenter_sidebar #documenter_logo{background-image:url(assets/images/image_1.png);}
+		a{color:#008C9E;}
+		hr{border-top:1px solid #D4D4D4;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ol a{background-color:#343838;color:#FFFFFF;}
+		#documenter_sidebar ol a{-webkit-text-shadow:1px 1px 0px #494F4F;-moz-text-shadow:1px 1px 0px #494F4F;text-shadow:1px 1px 0px #494F4F;}
+		#documenter_sidebar ol{border-top:1px solid #212424;}
+		#documenter_sidebar ol a{border-top:1px solid #494F4F;border-bottom:1px solid #212424;color:#FFFFFF;}
+		#documenter_sidebar ol a:hover{background:#333636;color:#00DFFC;border-top:1px solid #333636;}
+		#documenter_sidebar ol a.current{background:#333636;color:#00DFFC;border-top:1px solid #333636;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body>
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ol id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+			<li><a href="#features">Features</a></li>
+			<li><a href="#install_setup">Install & Setup</a></li>
+			<li><a href="#usage">Usage</a></li>
+			<li><a href="#settings">Settings</a></li>
+			<li><a href="#cache_system">Cache System</a></li>
+			<li><a href="#jquery_conflicts">jQuery Conflicts</a></li>
+			<li><a href="#help_support">Help & Support</a></li>
+			<li><a href="#disclaimer">Disclaimer</a></li>
+			<li><a href="#changelog">Changelog</a>
+				<ol>
+					<li><a href="#changelog_0.9.5">0.9.5</a>
+					<li><a href="#changelog_0.9.4">0.9.4</a>
+				</ol>
+			</li>
+			<li><a href="#thanks">Thanks</a></li>
+
+		</ol>
+		<div id="documenter_copyright">Copyright SJM 2011<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v1.4</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover"><h1>PWA+PHP Pro</h1><h2>Public and Private Picasa Web Albums in Wordpress</h2><hr><ul><li>Created: 03/10/2011</li><li>latest Update: 07/15/2011</li><li>By: SJM</li><li><a href="http://pwaplusphp.smccandl.net/">pwaplusphp.smccandl.net/</a></li><li>Email: <a href="mailto:&#104;&#101;&#108;&#112;&#64;&#115;&#109;&#99;&#99;&#97;&#110;&#100;&#108;&#46;&#110;&#101;&#116;">&#104;&#101;&#108;&#112;&#64;&#115;&#109;&#99;&#99;&#97;&#110;&#100;&#108;&#46;&#110;&#101;&#116;</a></li></ul><p>PWA+PHP Pro is a Wordpress plugin that provides all the features necessary to embed your private and public picasa album within your Wordpress site.</p></section><section id="features">
+	<h3>Features</h3><hr class="notop">
+<p><strong>What's New in v0.9.5?</strong></p>
+<ul>
+	<li>Support for WordPress Multisite</li>
+	<li>Hide individual albums by name via shortcode</li>
+	<li>Several bugfixes, see <a href='#changelog'>changelog</a></li>
+</ul>
+<p>
+	The plugin provides the following basic features:</p>
+<ul>
+	<li>
+		Embed all your public, private and unlisted Picasa web albums on any website</li>
+	<li>
+		Group and filter albums using tags or title keywords</li>
+	<li>
+		Allow users to download a full-resolution copy of any picture</li>
+	<li>
+		Display image totals for the entire gallery and by album</li>
+	<li>
+		Configuration via settings page (image size, thumbnail size, pagination, etc)</li>
+	<li>
+		Modify the included CSS file to match your site exactly</li>
+	<li>
+		Choose among 11 display languages and <a href="http://code.google.com/p/pwaplusphp/wiki/LanguageFiles">contribute new ones.</a></li>
+</ul>
+<p>
+	...and also the following advanced <strong>Pro Features:</strong></p>
+<div>
+	<strong>Cache System</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	When enabled, the cache system provides up to 24x faster page loads by saving the album&#39;s XML data and thumbnails locally on the server. This eliminates slow api calls and image downloads for a better user experience. See cache system page for details.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>jQuery Animation</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	Beautiful page transitions (fade, slide, etc) using jQuery and hovering over an album thumbnail causes the image to slowly fade to reveal the album&#39;s description.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Integrated Comment System</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	Users can comment on your photos and those comments are saved within Picasa Web Albums via the API. Comments are displayed with the photo and recent comments can be displayed in a widget. You'll need to install one of the supported Lightbox-type plugins for this to work.  Choose either <a target='_BLANK' href='http://wordpress.org/extend/plugins/shadowbox-js/'>Shadowbox JS</a> or <a target='_BLANK' href='http://wordpress.org/extend/plugins/auto-highslide/'>Auto-Highslide</a>.</div>
+</section>
+<section id="install_setup">
+	<h3>Install & Setup</h3><hr class="notop">
+<p>
+	<strong>Requirements</strong></p>
+<div>
+	You&#39;ll need a web server running Wordpress and the ability to upload the plugin to the plugins folder.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Upload &amp; Activate</strong></div>
+<ol>
+	<li>
+		Unzip the zip file</li>
+	<li>
+		Upload it to your website in wp-content/plugins/pwaplusphp folder</li>
+	<li>
+		Open http://yoursite.com/wp-admin in your browser and login</li>
+	<li>
+		In the left-hand menu, click &#39;Plugins&#39;</li>
+	<li>
+		Look for PWA+PHP Pro and click &#39;Activate&#39;</li>
+</ol>
+<div>
+	<strong>Configure</strong></div>
+<ol>
+	<li>
+		In the left-hand menu, expand &#39;Settings&#39; and click &#39;PWA+PHP Pro&#39;</li>
+	<li>
+		Click the link &#39;Login to your Google Account&#39;</li>
+	<li>
+		Enter your Picasa username and password</li>
+	<li>
+		Click &#39;Grant Access&#39; and you&#39;ll be sent back to the settings page</li>
+	<li>
+		Enter your Picasa username in the PicasaWeb Username box</li>
+	<li>
+		Modify other settings to suit your tastes</li>
+	<li>
+		Click &#39;Update Options&#39; near the bottom of the page</li>
+</ol>
+<div>
+	<strong>Publish</strong></div>
+<ol>
+	<li>
+		In the left-hand menu, click &#39;Pages&#39;, then &#39;Add New&#39;</li>
+	<li>
+		In the title box, enter &#39;Photos&#39;</li>
+	<li>
+		In the content box, enter &quot;[pwaplusphp]&quot; without the quotes</li>
+	<li>
+		Click &#39;Update&#39; in the right-hand sidebar</li>
+	<li>
+		Click &#39;View Page&#39; to view your photo gallery</li>
+</ol>
+<div>
+        <strong>Install Supported Lightbox</strong></div>
+<ol>
+        <li>
+                To use the comment system, install and activate <a target='_BLANK' href='http://wordpress.org/extend/plugins/shadowbox-js/'>Shadowbox JS</a> or <a target='_BLANK' href='http://wordpress.org/extend/plugins/auto-highslide/'>Auto-Highslide</a></li>
+</ol>
+</section>
+<section id="usage">
+	<h3>Usage</h3><hr class="notop">
+<p>
+	The table below details the supported options for the [pwaplusphp] shortcode. &nbsp;Insert these shortcodes into a page, post or widget. &nbsp;You may also want to read up on <a href="http://codex.wordpress.org/Shortcode">Wordpress Shortcodes</a>.</p>
+<div>
+	<table border="1" cellpadding="1" cellspacing="1" style="width: 750px; ">
+		<tbody>
+			<tr>
+				<td>
+					<strong>Shortcode</strong></td>
+				<td>
+					<strong>Result</strong></td>
+				<td>
+					<strong>Use In</strong></td>
+			</tr>
+			<tr>
+				<td>
+					[pwaplusphp]</td>
+				<td>
+					Displays all your albums, click one to see the photos in that album</td>
+				<td>
+					Page</td>
+			</tr>
+			<tr>
+				<td>
+					[pwaplusphp album=&quot;some_album&quot; images_per_page=&quot;20&quot; image_size=&quot;800&quot; thumbnail_size=&quot;32&quot;]</td>
+				<td>
+					<div>
+						Display photos from some_album only with different settings for image size, thumbnail size and images per page. (v0.9.3+ only)</div>
+				</td>
+				<td>
+					Page,Post</td>
+			</tr>
+			<tr>
+				<td>
+					[pwaplusphp tag=&quot;beach&quot;]</td>
+				<td>
+					[pwaplusphp tag=&quot;beach&quot;]</td>
+				<td>
+					Page,Post</td>
+			</tr>
+			<tr>
+				<td>
+					[pwaplusphp album=&quot;Miami&quot; tag=&quot;beach&quot;]</td>
+				<td>
+					Display photos matching tag &#39;beach&#39; from the &#39;Miami&#39; album only</td>
+				<td>
+					Page,Post</td>
+			</tr>
+			<tr>
+				<td>
+					[pwaplusphp album=&quot;some_album&quot; cover=&quot;TRUE&quot;]</td>
+				<td>
+					(Pro Only) Display cover image of some_album, clicking takes user to page set as Main Photo Page in settings panel</td>
+				<td>
+					Widget</td>
+			</tr>
+			<tr>
+				<td>
+					[pwaplusphp album=&quot;random_photo&quot;]</td>
+				<td>
+					(Pro Only) Displays one randomly selected album, clicking takes user to page set as Main Photo Page in settings panel</td>
+				<td>
+					Widget</td>
+			</tr>
+			<tr>
+				<td>
+					[pwaplusphp filter=&quot;2009&quot;]</td>
+				<td>
+					Displays all albums with _2009 in the title</td>
+				<td>
+					Page</td>
+			</tr>
+			<tr>
+				<td>
+					[pwaplusphp comments=&quot;5&quot;]</td>
+				<td>
+					(Pro Only) Display 5 most recent comments from all your albums</td>
+				<td>
+					Widget</td>
+			</tr>
+			 <tr>
+                                <td>
+                                        [pwaplusphp hide_albums=&quot;Album To Hide,Another Album To Hide&quot;]</td>
+                                <td>
+                                        (Pro v0.9.5+ Only) Display all albums except those listed. Separate album titles with commas.</td>
+                                <td>
+                                        Page</td>
+                        </tr>
+		</tbody>
+	</table>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="settings">
+	<h3>Settings</h3><hr class="notop">
+<p>
+	This page details the settings available on the PWA+PHP Pro Settings page. &nbsp;You can access the settings page by clicking Plugins in the left-hand menu, and then clicking Settings under PWA+PHP Pro.</p>
+<h2>
+	Picasa Access Settings</h2>
+<p>
+	<strong>Picasaweb User&nbsp;</strong></p>
+<p style="margin-left: 40px; ">
+	<i style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; outline-width: 0px; outline-style: initial; outline-color: initial; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: transparent; word-wrap: break-word; ">Enter your Picasa username.</i></p>
+<p>
+	<strong>GData Token</strong></p>
+<p style="margin-left: 40px; ">
+	<em>This token is generated automatically during the first step of the install process and it allows the plugin to access your private / unlisted albums.</em></p>
+<p>
+	<strong>Public Albums Only</strong></p>
+<p style="margin-left: 40px; ">
+	<i style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; outline-width: 0px; outline-style: initial; outline-color: initial; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: transparent; word-wrap: break-word; ">Set to TRUE to hide unlisted albums.</i></p>
+<h2>
+	Pro Features</h2>
+<p>
+	<strong>Cache Thumbnails</strong></p>
+<p style="margin-left: 40px; ">
+	<i style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; outline-width: 0px; outline-style: initial; outline-color: initial; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: transparent; word-wrap: break-word; ">Cache thumbnails on your server for faster page loads.</i></p>
+<p>
+	<strong>Comment System</strong></p>
+<p style="margin-left: 40px; ">
+	<i style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; outline-width: 0px; outline-style: initial; outline-color: initial; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: transparent; word-wrap: break-word; ">Allow users to comment on photos via API. Requires&nbsp;<a href="http://wordpress.org/extend/plugins/shadowbox-js/" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; outline-width: 0px; outline-style: initial; outline-color: initial; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: transparent; color: rgb(33, 117, 155); word-wrap: break-word; text-decoration: none; ">Shadowbox JS</a>&nbsp;or<a href="http://wordpress.org/extend/plugins/auto-highslide/" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; outline-width: 0px; outline-style: initial; outline-color: initial; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: transparent; color: rgb(33, 117, 155); word-wrap: break-word; text-decoration: none; ">Auto HighSlide</a>.</i></p>
+<p>
+	<strong>Main Photo Page</strong></p>
+<p style="margin-left: 40px; ">
+	<i style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; outline-width: 0px; outline-style: initial; outline-color: initial; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: transparent; word-wrap: break-word; ">Create a page with [pwaplusphp] and select it. Required for album cover shortcode.</i></p>
+<p>
+	<strong>jQuery Page Transition</strong></p>
+<p style="margin-left: 40px; ">
+	<i style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; outline-width: 0px; outline-style: initial; outline-color: initial; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: transparent; word-wrap: break-word; ">Set&nbsp;<a alt="See Transition Demos" href="http://jquery.malsup.com/cycle/browser.html" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; outline-width: 0px; outline-style: initial; outline-color: initial; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: transparent; color: rgb(33, 117, 155); word-wrap: break-word; text-decoration: none; " target="_BLANK" title="See Transition Demos">page transition style</a>. Use &quot;none&quot; to disable.</i></p>
+<p>
+	&nbsp;</p>
+<h3>
+	Basic Display Settings</h3>
+<div>
+	<strong>Site Language<span class="Apple-tab-span" style="white-space:pre"> </span></strong></div>
+<div style="margin-left: 40px; ">
+	<em>Sets the display language. More may be available here.</em></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Album Date Format<span class="Apple-tab-span" style="white-space:pre"> </span></strong></div>
+<div style="margin-left: 40px; ">
+	<em>Define the date format for albums. Default setting is Y-m-d, i.e. 2010-03-12.</em></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Display Style<span class="Apple-tab-span" style="white-space:pre"> </span></strong></div>
+<div style="margin-left: 40px; ">
+	<em>Set display style and placement of captions. Edit CSS for Custom Style.</em></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Permit Image&nbsp;Download<span class="Apple-tab-span" style="white-space:pre"> </span></strong></div>
+<div style="margin-left: 40px; ">
+	<em>Determines whether the user can download the original full-size image.</em></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Images Per Page<span class="Apple-tab-span" style="white-space:pre"> </span></strong></div>
+<div style="margin-left: 40px; ">
+	<em>Thumbnails per page. Zero means don&#39;t paginate.</em></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Albums Per Page<span class="Apple-tab-span" style="white-space:pre"> </span></strong></div>
+<div style="margin-left: 40px; ">
+	<em>Album thumbnails per page. Zero means don&#39;t paginate.</em></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Image Size<span class="Apple-tab-span" style="white-space:pre"> </span></strong></div>
+<div style="margin-left: 40px; ">
+	<em>Sets the size of the image displayed in the Lightbox.</em></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Album Details<span class="Apple-tab-span" style="white-space:pre"> </span></strong></div>
+<div style="margin-left: 40px; ">
+	<em>Overlay album thumbnail with description on mouse hover?</em></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Album Thumbnail Size<span class="Apple-tab-span" style="white-space:pre"> </span></strong></div>
+<div style="margin-left: 40px; ">
+	<em>Sets the album thumbnail size.</em></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Photo Thumbnail Size<span class="Apple-tab-span" style="white-space:pre"> </span></strong></div>
+<div style="margin-left: 40px; ">
+	<em>Sets the photo thumbnails size.</em></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Crop Thumbnails<span class="Apple-tab-span" style="white-space:pre"> </span></strong></div>
+<div style="margin-left: 40px; ">
+	<em>Crop image thumbnails to square size or use actual ratio</em></div>
+<div>
+	&nbsp;</div>
+<h2>
+	Advanced Settings</h2>
+<div>
+	<div>
+		<strong>Truncate Album Names&nbsp;</strong></div>
+	<div style="margin-left: 40px; ">
+		Shorten album name to ensure proper display of fluid layout?</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>Description Length Limit&nbsp;</strong></div>
+	<div style="margin-left: 40px; ">
+		Trim display length of description to specific number of characters</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>Caption Length Limit&nbsp;</strong></div>
+	<div style="margin-left: 40px; ">
+		Trim display length of captions to specific number of characters</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>Require Filter</strong></div>
+	<div style="margin-left: 40px; ">
+		Is filter required? Most users should select FALSE.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>Show Drop Box&nbsp;</strong></div>
+	<div style="margin-left: 40px; ">
+		Show the Drop Box on all pages?</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>Hide Video&nbsp;</strong></div>
+	<div style="margin-left: 40px; ">
+		Determines whether your videos are displayed within albums</div>
+</div>
+</section>
+<section id="cache_system">
+	<h3>Cache System</h3><hr class="notop">
+<p>
+	<strong>Introduction</strong></p>
+<div>
+	The PWA+PHP Pro cache system drastically improves page load times by storing local copies of album XML data and thumbnails on your server, eliminating repetitive api calls and reducing server load.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Speed Comparison</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	<table border="1" cellpadding="1" cellspacing="1" style="width: 500px; ">
+		<tbody>
+			<tr>
+				<td>
+					<strong>Version</strong></td>
+				<td>
+					<strong>Mode</strong></td>
+				<td>
+					<strong>Album Size</strong></td>
+				<td>
+					<strong>1st Run</strong></td>
+				<td>
+					<strong>2nd Run</strong></td>
+				<td>
+					<strong>Improvement</strong></td>
+			</tr>
+			<tr>
+				<td>
+					0.9.3 Basic</td>
+				<td>
+					N/A</td>
+				<td>
+					84 images</td>
+				<td>
+					.94 sec</td>
+				<td>
+					.77 sec</td>
+				<td>
+					N/A</td>
+			</tr>
+			<tr>
+				<td>
+					0.9.4 Pro</td>
+				<td>
+					Cache Off</td>
+				<td>
+					84 images</td>
+				<td>
+					.84 sec</td>
+				<td>
+					.57 sec</td>
+				<td>
+					17.5%</td>
+			</tr>
+			<tr>
+				<td>
+					0.9.4 Pro</td>
+				<td>
+					Cache On</td>
+				<td>
+					84 images</td>
+				<td>
+					.04 sec</td>
+				<td>
+					.03 sec</td>
+				<td>
+					96% (24x faster!)</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Enabling and Disabling</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	To change the status of the cache system, visit PWA+PHP&#39;s settings page and use the Cache Thumbnails drop-box under the Pro Options menu. Please note, the first time you access an album it will load slowly while the web server saves the XML and individual images. For large albums this can take 10-15 seconds.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>How It Works</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	Each time a user visits your album list or views a specific album, PWA+PHP calculates a unique filename for the Picasaweb API url that corresponds to that album.</div>
+<div>
+	&nbsp;</div>
+<div>
+	Next, it checks if a cached file by that name already exists, and if so, it reads the data in that locally-stored XML file instead of making an API call to PicasaWeb. In addition, it attempts to use locally-stored copies of the thumbnails instead of loading remote images from the PicasaWeb servers.</div>
+<div>
+	&nbsp;</div>
+<div>
+	If the XML file or any individual thumbnail does not exist, PWA+PHP will grab those from the PicasaWeb server.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Cache Location</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	The cached data is stored in md5 obfuscated directories (more on that later) under the wp-content/plugins/pwaplusphp/cache folder on your server.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Refreshing Content</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	PWA+PHP will automatically refresh cached files twice per day, after they&#39;re older than 10 hours. You can also force a refresh at any time by appending &amp;refresh=1 to your album URL, for example:</div>
+<div>
+	http://www.yoursite.com/?album=pictures&amp;refresh=1</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Security Concerns</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	PWA+PHP obfuscates the PicasaWeb? username using md5, so cached files are stored in non-identifiable directories. However, all files under wp-content are (by default) accessible and browsable. This means that anyone could easily browse your cached thumbnails and this may be a concern for people storing private album thumbnails.</div>
+<div>
+	&nbsp;</div>
+<div>
+	To combat this, you can open up wp-content/.htaccess and add the following code at the top:</div>
+<div>
+	&nbsp;</div>
+<pre class="brush: plain">
+Options -Indexes</pre>
+<div>
+	&nbsp;</div>
+<div>
+	This prevents the webserver from allowing users to browse the directories under wp-content/. Any user with the full URL to the thumbnail would still be able to access the files, but this is a trade-off for the faster page loads and since the folder names are obfuscated, it&#39;s unlikely to be a real issue.</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="jquery_conflicts">
+	<h3>jQuery Conflicts</h3><hr class="notop">
+<p>
+	<strong>Introduction</strong></p>
+<div>
+	Pro v0.9.4 and up has integrated jQuery animations for paginated albums (via jQuery Cycle) and album thumbnails also fade via JQ to reveal the album description and details.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Conflicts</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	When multiple instances of jQuery are loaded within wordpress, some strange things can happen. Since there&#39;s no way to detect whether JQ is loaded until after all the PHP code has executed, we can&#39;t dynamically disable PWA+PHP&#39;s calls to load jQuery.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Workaround</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	You can disable PWA+PHP&#39;s jQuery calls in pwapluphp.php by removing them or commenting them out. Here are the pertinent lines:</div>
+<div>
+	&nbsp;</div>
+<pre class="brush: plain">
+&lt;!-- include jQuery library --&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- include Cycle plugin --&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js&quot;&gt;&lt;/script&gt;</pre>
+<p>
+	&nbsp;</p>
+</section>
+<section id="help_support">
+	<h3>Help & Support</h3><hr class="notop">
+<p>
+	Support is available&nbsp;<a href="http://code.google.com/p/pwaplusphp/w/list" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; outline-width: 0px; outline-style: initial; outline-color: initial; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: transparent; color: rgb(33, 117, 155); word-wrap: break-word; text-decoration: none; background-position: initial initial; background-repeat: initial initial; " target="_BLANK">on the wiki</a>&nbsp;and our&nbsp;<a href="http://groups.google.com/group/pwaplusphp" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; outline-width: 0px; outline-style: initial; outline-color: initial; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: transparent; color: rgb(33, 117, 155); word-wrap: break-word; text-decoration: none; background-position: initial initial; background-repeat: initial initial; " target="_BLANK">discussion group</a>&nbsp;is a good place to ask questions. You can also submit and review&nbsp;<a href="http://code.google.com/p/pwaplusphp/issues/entry?template=Defect%20report%20from%20user" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; outline-width: 0px; outline-style: initial; outline-color: initial; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: transparent; color: rgb(33, 117, 155); word-wrap: break-word; text-decoration: none; background-position: initial initial; background-repeat: initial initial; " target="_BLANK">Bug Reports</a>&nbsp;and&nbsp;<a href="http://code.google.com/p/pwaplusphp/issues/entry?template=Enhancement%20Request" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; outline-width: 0px; outline-style: initial; outline-color: initial; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: transparent; color: rgb(33, 117, 155); word-wrap: break-word; text-decoration: none; background-position: initial initial; background-repeat: initial initial; " target="_BLANK">Enhancement Requests</a>&nbsp;on the&nbsp;<a href="http://code.google.com/p/pwaplusphp/issues/list" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; outline-width: 0px; outline-style: initial; outline-color: initial; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: transparent; color: rgb(33, 117, 155); word-wrap: break-word; text-decoration: none; background-position: initial initial; background-repeat: initial initial; " target="_BLANK">Issues Page</a>.</p>
+</section>
+<section id="disclaimer">
+	<h3>Disclaimer</h3><hr class="notop">
+<p>
+	All Rights Reserved. PWA+PHP is provided as-is with no guarantee or warranty. You may not copy, redistribute or sell PWA+PHP Pro. Use of the software constitues agreement to these conditions.</p>
+</section>
+<section id="changelog">
+<h3>Changelog</h3><hr class="notop">
+
+<h4 id="changelog_0.9.5">0.9.5</h4>
+<pre class="brush: plain">
+Added support for Wordpress Multisite via Issue 102 (http://code.google.com/p/pwaplusphp/issues/detail?id=102)
+Added ability to hide albums by name via Issue 105 (http://code.google.com/p/pwaplusphp/issues/detail?id=105)
+Added ability to override thumb size in one_random.php via Issue 122 (http://code.google.com/p/pwaplusphp/issues/detail?id=122)
+Added support for caching in Pro's one_random.php via Issue 123 (http://code.google.com/p/pwaplusphp/issues/detail?id=123)
+Bug: Fixed pro / wptouch caching conflict bug via Issue 124 (http://code.google.com/p/pwaplusphp/issues/detail?id=124)
+Bug: Fixed single quotes bug in caption via Issue 140 (http://code.google.com/p/pwaplusphp/issues/detail?id=140)
+Bug: Fixed short open tag bug in install.php via Issue 146 (http://code.google.com/p/pwaplusphp/issues/detail?id=146)
+</pre>
+<h4 id="changelog_0.9.4">0.9.4</h4>
+<pre class="brush: plain">
+fixed album alignment (via css font-size changes)
+added username overrides
+remove bad layout styles and associated functions
+cleanup unused CSS rules
+modify settings pages for SHOW_IMG_CAPTION
+support cropped / uncropped thumbs in JQ
+add jq header code to pro
+MERGE Pagination styles for pro
+pro add setting for jq transition mode
+pro add setting to disable jq pagination
+fix ie6 broken layout, float left display inlone?
+Fix message: Page:Browser JS disabled!
+cache feed xml data
+add JQ pagination for album thumbs in dumpAL
+cache check to function
+cache album feed in dAL
+div by 0 error when IPP = 0
+add news feed to settings page
+pro add dumpAlbumList hover overlays via JQ
+add hide title override in showAC (issue 81)
+fix caption placement in sAC
+clean up inline styles in dAL
+bug fixes
+  fixed broken pagination
+  fixed albums per page setting bug
+  fixed album title and back-link bug
+  fixed issue 84 link 404
+  fix dropbox always shown
+  fix cache url issue 86</pre>
+<div>
+	0.9.3</div>
+<pre class="brush: plain">
+Added ability to paginate the albums page for users with large number of albums
+Added ability to override image size, images per page and thumbnail size within the shortcode to allow for individual albums to have specific settings.
+Fixed Issue 63</pre>
+<div>
+	0.9.2</div>
+<pre class="brush: plain">
+Bug fix: fixed issue where username is displayed as title when using tags</pre>
+<div>
+	&nbsp;</div>
+<div>
+	0.9.1</div>
+<pre class="brush: plain">
+Bug fix: removed debug URL echo from the top the album page. User can also delete line: echo $file from dumpAlbumList.php.</pre>
+<div>
+	0.9</div>
+<pre class="brush: plain">
+Added new shortcode option, &#39;tag&#39;, to display photos matching tags in all albums or in a specific album when paired with &#39;album&#39; option.
+Added &#39;Settings&#39; link underneath the plugin name on the Plugins page for easier access to the settings after install
+Updated the settings page target so that the user is returned to the settings page after clicking Update button
+Fixed problem with pagination so that the Pages div is not displayed unless there are multiple pages of results</pre>
+<div>
+	0.8</div>
+<pre class="brush: plain">
+Added new display mode &#39;Custom Style&#39; with no hardcoded CSS style in the code.Users have complete control of the look and feel via style.css.
+Renamed &quot;Show Photo Caption&quot; option on settings page to &quot;Display Style&quot;
+Fixed display bug for captions with apostrophes.</pre>
+<div>
+	0.7</div>
+<pre class="brush: plain">
+Display tweaks for enhanced compatibility with WPtouch iPhone Theme in mobile browsers
+Fixed display bug with Overlay caption mode in Firefox
+Fixed Language variable issue in album cover shortcode when used in sidebar
+Fixed several layout issues for better theme compatibility
+Moved some remaining CSS in PHP files to CSS file for easier customization
+Pro version: Added links to full image in recent comments block
+Pro version: Fixed bug with comment image display</pre>
+<div>
+	0.6</div>
+<pre class="brush: plain">
+Slick new settings page with WP look and feel
+Option to upgrade to Pro Version for comments, caching and new shortcodes
+Fixed broken v0.5 Hide Video Option
+Added ability to regenerate gdata token w/o remove re-add</pre>
+<div>
+	0.5</div>
+<pre class="brush: plain">
+New option allows for use of uncropped thumbnails
+New &quot;Overlay&quot; display option, using CSS from MyPHPDropBoxGallery?(http://wiki.dropbox.com/DropboxAddons/MyPHPDropBoxGallery)
+New option to specify format?(http://php.net/manual/en/function.date.php) on album page
+Updated images per page option to allow any integer value</pre>
+<div>
+	0.4</div>
+<pre class="brush: plain">
+New option allows for different size album and photo thumbnails
+New options to set trim length for descriptions and captions via settings panel
+Re-designed install panel with settings in groups
+Forced &quot;always&quot; caption mode for IE6 users when using &quot;hover&quot; caption mode</pre>
+<div>
+	0.3</div>
+<pre class="brush: plain">
+Beta version - added filter functionality to shortcode and caption display options in gallery view</pre>
+<div>
+	0.2</div>
+<pre class="brush: plain">
+Alpha version - initial release.</pre>
+<p>
+	&nbsp;</p>
+</section>
+<section id="thanks">
+	<h3>Thanks</h3><hr class="notop">
+<p>
+	Thanks so much to</p>
+<ul>
+	<li>
+		<a href="http://jquery.malsup.com/cycle/">jQuery Cycle</a></li>
+</ul>
+<p>
+	&nbsp;</p>
+</section>
+
+	</div>
+</body>
+</html>
