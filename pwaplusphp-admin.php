@@ -55,6 +55,11 @@ function pwa_render_admin($pwa) {
 			echo '<div id="message" class="updated fade pwa_notice"><p>Pro Activated</p></div>';
 		}
 	}
+	if (isset($_REQUEST['transaction'])) {
+		if (update_option('pwa_pro_key',$_REQUEST['transaction'])) {
+			echo '<div id="message" class="updated fade pwa_notice"><p>Pro Activated</p></div>';
+		}
+	}
 
 	// Variables
 	$loc = '';
