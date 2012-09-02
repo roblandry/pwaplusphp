@@ -84,13 +84,13 @@ $to_report = get_option(c_pwa_report_errors);
 //pwaplusphp::report_errors($to_report);
 
 // Pro version is not hosted on wordpress.org
-if (get_option('pwaplusphp_pro') == 'TRUE') {
+//if (get_option('pwaplusphp_pro') == 'TRUE') {
 	global $updates_pwa;
 	if (empty($updates_pwa)) {
-		$updates_url = 'http://redmine.landry.me/update.php?plugin=pwaplusphp-pro&pid='. get_option('pwaplusphp_pro_pid') .'&code='. get_option('pwaplusphp_pro_tid') .'&domain='. md5($_SERVER['HTTP_HOST']);
+		$updates_url = "http://www.landry.me/extend/plugins/pwaplusphp/update/";
 		$updates_pwa = new PluginUpdateChecker($updates_url, __FILE__, 'pwaplusphp', 1);
 	}
-}
+//}
 
 // Testing pointers
 

@@ -292,17 +292,20 @@ if (!class_exists('pwaplusphp')) {
 		function Admin_menu() {
 			# Get current user
 			global $user_ID;
+			global $pwa_pro;
 			get_currentuserinfo();
 
-			if (function_exists('add_submenu_page'))
-				$page = add_submenu_page('upload.php',				
-					__('PWA+PHP', c_pwa_text_domain) . ' ' . __('Administration', c_pwa_text_domain),
-					__('PWA+PHP', c_pwa_text_domain),
-					current_user_can(c_pwa_min_cap),
-					'pwaplusphp',
-					array(&$this, 'Administration'));
-				add_action( 'admin_print_styles-' . $page, array(&$this, 'Admin_Styles' ));
-				add_action( 'admin_print_scripts-' . $page, array(&$this, 'Admin_Scripts' ));
+			$title = 'PWA+PHP';
+			if (!empty($pwa_pro)) $title = 'PWA+PHP PRO';
+			$page = add_submenu_page('upload.php',				
+				__($title, c_pwa_text_domain) . ' ' . __('Administration', c_pwa_text_domain),
+				__($title, c_pwa_text_domain),
+				current_user_can(c_pwa_min_cap),
+				'pwaplusphp',
+				array(&$this, 'Administration'));
+			add_action( 'admin_print_styles-' . $page, array(&$this, 'Admin_Styles' ));
+			add_action( 'admin_print_scripts-' . $page, array(&$this, 'Admin_Scripts' ));
+			
 
 		} # end Admin_menu
 
