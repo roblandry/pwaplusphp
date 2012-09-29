@@ -174,7 +174,7 @@ if (!class_exists('pwa_int')) {
 			$site = get_bloginfo('url');
 			$port = ($_SERVER['SERVER_PORT'] != 80) ? ':' . $_SERVER['SERVER_PORT'] : '';
 			$self  = $_SERVER['PHP_SELF'];
-			$loc  = urlencode($site . $port . $self . "?page=" . plugin_basename($main_file) ."&pwa_action=return");
+			$loc  = urlencode($site . $port . $self . "?page=" . basename(PWA_DIR) ."&pwa_action=return");
 			$next = "https://www.google.com/accounts/AuthSubRequest?scope=http%3A%2F%2Fpicasaweb.google";
 			$next .= ".com%2Fdata%2F&session=1&secure=0&next=$loc";
 			echo "<div id='message' class='updated fade pwa_notice'><h2>Install Step 1: Token Generation</h2>";
@@ -244,7 +244,7 @@ if (!class_exists('pwa_int')) {
 			$uri = $_SERVER["REQUEST_URI"];
 			list($back_link,$trash) = explode('&',$uri);
 
-			echo "<p>Continue to <a href='$back_link'>Step 2</a>...</p></div>";
+			echo "<p>Enter your PicasaWeb Username below and click Save to finish setup!</p></div>";
 
 		} # End Set Gdata Token
 

@@ -1379,14 +1379,16 @@ if (!class_exists('pwaplusphp')) {
 
 					$caption_link_tweak = pwa_int::setupCaption($caption,$pwa_options['ACTIVE_LIGHTBOX']);
 					$out .= "<div class='pwaplusphp_jq_thumb' style='" . $crop_styles . " width: "; 					$out .= $pwa_options['PHOTO_THUMBSIZE'] . "px; height: ";
-					$out .= ($pwa_options['PHOTO_THUMBSIZE'] + 35). "px;'>";
+					$out .= ($pwa_options['PHOTO_THUMBSIZE'] + 15). "px;'>";
 
+					$out .= "<div class='pwaplusphp_albdesc' style='height: 205px; width: 160px;'>";
 					# Rob - Added via Issue 67 Enhancement
 					if (!empty($pwa_pro)) {
 						if ($pwa_options['SHOW_EXIF'] == "TRUE") {
 							$out .= $pwa_pro::Display_Exif($photos, $i);
 						}
 					}
+					$out .= "</div>";
 
 					# Added for lazy loading (PRO)
 					if (!empty($pwa_pro)) {
@@ -1629,7 +1631,7 @@ if (!class_exists('pwaplusphp')) {
 				}
  
 				$out .= "</div>";
-				$out .= "<div style='clear: both;'></div>";
+				$out .= "<div style='clear: right;'></div>";
 				# Commented out for the album for loop
 				//  $photo_array = array();
 			}
@@ -1795,10 +1797,7 @@ if (!class_exists('pwaplusphp')) {
 		function Admin_Left_Top($options) {
 			$out = "<div id='available-widgets' class='widgets-holder-wrap'>
 			<div class='sidebar-name'><div class='sidebar-name-arrow'><br /></div><h3>". $options[1] ."</h3></div>
-			<div class='widget-holder'>
 			<!--form id='". $options[3] ."' action='". $options[0] ."&pwa_action=config' method='post'-->
-			<p class='description'>". $options[2] ."</p>
-			<div id='widget-list'>
 			<table class='widefat' cellspacing=5 width=700>";
 			return $out;
 		} # End Admin Left Top
@@ -1811,12 +1810,10 @@ if (!class_exists('pwaplusphp')) {
 		# Used in: -admin
 		#--------------------------------------------------------------
 		function Admin_Left_Bottom() {
-			$out = "</table></div>
+			$out = "</table>
 			<div class='widget-control-actions'>
 			<div class='alignright'>
 			<input class='button-primary' type='submit' name='Submit' value='Save' /></div>
-			<br class='clear' />
-			</div>
 			<br class='clear' />
 			</div><!--/form-->
 			<br class='clear' />
@@ -1835,8 +1832,6 @@ if (!class_exists('pwaplusphp')) {
 			$out = "<div class='widgets-holder-wrap'>
 			<div class='sidebar-name'><div class='sidebar-name-arrow'><br />
 			</div><h3>$title</h3><span></span></div>
-			<div id='sidebar-1' class='widgets-sortables'>
-			<div class='sidebar-description'>
 			<table class='widefat' style='width: 100%;'>";
 			return $out;
 		} # End Admin Right Top
@@ -1849,7 +1844,7 @@ if (!class_exists('pwaplusphp')) {
 		# Used in: -admin
 		#--------------------------------------------------------------
 		function Admin_Right_Bottom() {
-			$out = '</table></div></div></div>';
+			$out = '</table></div>';
 			return $out;
 		} # End Admin Right Bottom
 

@@ -87,6 +87,11 @@ function pwa_render_admin($pwa) {
 	<form name=form1 action='<?php echo $options[0]; ?>&pwa_action=config' method='post'>
 	<div id="widgets-left">
 
+<script type="text/javascript">var URWidgetListener = function (event) {  if (event.data.indexOf("redirect") == 0) {    found = event.data.match(/redirect:url\(([^\)]*)\)/);    if (found.length == 2) {      location.href = found[1];    }  }};if (window.addEventListener) {  window.addEventListener("message", URWidgetListener, false);} else {  window.attachEvent("onmessage", URWidgetListener);} var head  = document.getElementsByTagName("head")[0];var link  = document.createElement("link");link.rel  = "stylesheet";link.type = "text/css";link.href = "http://pwaplusphp.smccandl.net/support/public/themes/default/assets/css/widget.css";link.media = "all";head.appendChild(link);</script><script type="text/javascript">widget = {url:'http://pwaplusphp.smccandl.net/support/'}</script><script src="http://pwaplusphp.smccandl.net/support/public/assets/modules/system/js/widget.js" type="text/javascript"></script>
+<a class="widget-tab widget-tab-right w-round" style="margin-top:-52px;background-color:#67A2B7;border-color:#FFFFFF;" title="Support" href="javascript:popup('widget', 'http://pwaplusphp.smccandl.net/support/widget', 765, 405);"  >
+  <img width="15" alt="" src="http://pwaplusphp.smccandl.net/support/public/files/logo/widget-text-default.png" />
+</a>
+
 
 <?php
 $options[1] = 'Picasa Access Settings';
@@ -140,7 +145,8 @@ echo $wp_pwa::Admin_Left_Bottom();
 #----------------------------------------------------------------------------
 # Pro Features
 #----------------------------------------------------------------------------
-if ($PRO == 'TRUE') $pwa_pro::Admin_Pro_Options($options);
+if ($PRO == 'TRUE') { $pwa_pro::Admin_Pro_Options($options); }
+else { echo "<img src='http://pwaplusphp.smccandl.net/images/pwaplusphp-pro-features.png' title='pro-features' alt='pro-features' style='padding-bottom: 30px;'/>"; }
 
 #----------------------------------------------------------------------------
 # Basic Display Settings
@@ -580,7 +586,7 @@ if ($PRO == 'TRUE') $pwa_pro::Admin_Pro_Options_Css($options);
 	<!-- HELP & SUPPORT -->
 	<?php $title = 'Help & Support';
 	echo $wp_pwa::Admin_Right_Top($title); ?>
-	<tr><td><p>Support is available <a href='http://code.google.com/p/pwaplusphp/w/list' target='_BLANK'>on the wiki</a> and our <a href='http://groups.google.com/group/pwaplusphp' target='_BLANK'>discussion group</a> is a good place to ask questions. You can also submit and review <a href='http://code.google.com/p/pwaplusphp/issues/entry?template=Defect%20report%20from%20user' target='_BLANK'>Bug Reports</a> and <a href='http://code.google.com/p/pwaplusphp/issues/entry?template=Enhancement%20Request' target='_BLANK'>Enhancement Requests</a> on the <a href='http://code.google.com/p/pwaplusphp/issues/list' target='_BLANK'>Issues Page</a>.</p></td></tr>
+	<tr><td><p>If you encounter any issues, head to the <strong><a href="http://pwaplusphp.smccandl.net/support/" target="_BLANK">support site</a></strong> or click the feedback tab on the right side of this page.</p></td></tr>
 	<?php echo $wp_pwa::Admin_Right_Bottom(); ?>
 	<!-- /HELP & SUPPORT -->
 
