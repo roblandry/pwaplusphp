@@ -1631,7 +1631,7 @@ if (!class_exists('pwaplusphp')) {
 				}
  
 				$out .= "</div>";
-				$out .= "<div style='clear: right;'></div>";
+				$out .= "<div style='clear: both;'></div>";
 				# Commented out for the album for loop
 				//  $photo_array = array();
 			}

@@ -146,7 +146,8 @@ echo $wp_pwa::Admin_Left_Bottom();
 # Pro Features
 #----------------------------------------------------------------------------
 if ($PRO == 'TRUE') { $pwa_pro::Admin_Pro_Options($options); }
-else { echo "<img src='http://pwaplusphp.smccandl.net/images/pwaplusphp-pro-features.png' title='pro-features' alt='pro-features' style='padding-bottom: 30px;'/>"; }
+else { echo "<div id='available-widgets' class='widgets-holder-wrap ui-droppable'><img src='http://pwaplusphp.smccandl.net/images/pwaplusphp-pro-features.png' title='pro-features' alt='pro-features' style='width:100%; -webkit-border-top-right-radius: 3px;
+-webkit-border-top-left-radius: 3px; border-top-right-radius: 3px; border-top-left-radius: 3px;'/><div class='widget-control-actions'><div class='alignright'><input class='button-primary' type='submit' name='Submit' value='Save' disabled/></div><br class='clear'></div><br class='clear'></div>"; }
 
 #----------------------------------------------------------------------------
 # Basic Display Settings
