@@ -165,7 +165,7 @@ if (!class_exists('pwaplusphp')) {
 		#--------------------------------------------------------------
 		function Init() {
 			# I18n
-			load_plugin_textdomain(c_pwa_text_domain, false, dirname(plugin_basename(__FILE__)) . '/lang/');
+			load_plugin_textdomain(c_pwa_text_domain, false, PWA_DIR . '/lang/');
 		} # end init
 
 
@@ -876,7 +876,7 @@ if (!class_exists('pwaplusphp')) {
 			#------------------------------------------------------
 			# Load Language File 
 			#------------------------------------------------------
-			require(dirname(__FILE__)."/lang/". get_option(c_pwa_language) .".php");
+			require(PWA_DIR."/lang/". get_option(c_pwa_language) .".php");
 
 			#------------------------------------------------------
 			# Check for required variables from config file
@@ -1155,7 +1155,7 @@ if (!class_exists('pwaplusphp')) {
 			#------------------------------------------------------
 			# Load Language File 
 			#------------------------------------------------------
-			require(dirname(__FILE__)."/lang/". get_option(c_pwa_language) .".php");
+			require(PWA_DIR."/lang/". get_option(c_pwa_language) .".php");
 
 			#------------------------------------------------------
 			# VARIABLES 
@@ -1629,7 +1629,7 @@ if (!class_exists('pwaplusphp')) {
 				}
  
 				$out .= "</div>";
-				$out .= "<div style='clear: right;'></div>";
+				$out .= "<div style='clear: both;'></div>";
 				# Commented out for the album for loop
 				//  $photo_array = array();
 			}
@@ -1660,7 +1660,7 @@ if (!class_exists('pwaplusphp')) {
 			#------------------------------------------------------
 			# Load Language File 
 			#------------------------------------------------------
-			require(dirname(__FILE__)."/lang/". get_option(c_pwa_language) .".php");
+			require(PWA_DIR."/lang/". get_option(c_pwa_language) .".php");
 
 			$album_array = array();
 			$photo_array = array();
@@ -1837,7 +1837,7 @@ if (!class_exists('pwaplusphp')) {
 			</div><h3>$title</h3><span></span></div>
 			<div id='sidebar-1' class='widgets-sortables'>
 			<div class='sidebar-description'>
-			<table class='widefat' cellspacing=5>";
+			<table class='widefat' style='width: 100%;'>";
 			return $out;
 		} # End Admin Right Top
 

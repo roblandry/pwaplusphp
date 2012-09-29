@@ -419,9 +419,9 @@ add_shortcode('pwaplusphp', 'pwaplusphp_shortcode');
 
 // Add settings link on plugin page
 function pwaplusphp_settings_link($links) { 
-  $settings_link = '<a href="upload.php?page=pwaplusphp-pro/pwaplusphp.php">Settings</a>'; 
-  array_unshift($links, $settings_link); 
-  return $links; 
+	$settings_link = '<a href="upload.php?page=pwaplusphp-pro/pwaplusphp.php">Settings</a>'; 
+	array_unshift($links, $settings_link); 
+	return $links; 
 }
  
 $plugin = plugin_basename(__FILE__); 

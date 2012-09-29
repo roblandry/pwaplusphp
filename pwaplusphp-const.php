@@ -28,8 +28,8 @@ if (!empty($pwa_pro)) $pwa_pro::Define_Pro_Constants();
   define('c_pwa_min_cap', 'manage_options');
   define('c_pwa_version', 'pwaplusphp_version');
   define('c_pwa_nonce_form','pwaplusphp-nonce-form');
-  define('PWA_URL', WP_PLUGIN_URL.'/pwaplusphp/');
-  define('PWA_DIR', WP_PLUGIN_DIR.'/pwaplusphp/');
+  define('PWA_DIR', plugin_dir_path(__FILE__));
+  define('PWA_URL', plugin_dir_url(__FILE__));
 
   // Config Options
   define('c_pwa_use_lightbox', 'TRUE');
